@@ -1,0 +1,3 @@
+This is a desktop supported clothing and accessories website for buying items online. customers can browse, select and add items to their cart for buying them all. There are search and filter by category functionality for better user experience. Integrated user signup and login, logout authentication by django’s default User Model. The clothing store’s backend  is implemented in Django and Sqlite.
+
+Note: Payment gateway integration was not implemented as this was a personal project to showcase core web development skills.

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Wishlist{% endblock %}
+
+{% block 'content' %}
+
+<!-- Shoping Cart -->
+<form action="" class="bg0 p-t-75 p-b-85" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+                <div class="m-l-25 m-r--38 m-lr-0-xl">
+                    <div class="wrap-table-shopping-cart">
+                        <table class="table-shopping-cart">
+                            <tr class="table_head">
+                                <th class="column-1">Product</th>
+                                <th class="column-2"></th>
+                                <th class="column-3">Price</th>
+                                <th class="column-4">Action</th>
+                                <th class="column-5"></th>
+                            </tr>
+
+                            {% for item_info in wish_items %}
+                            <tr class="table_row">
+                                <td class="column-1">
+                                    <div class="how-itemcart1">
+                                        <img src="{{ item_info.product.image.url }}" alt="IMG">
+                                    </div>
+                                </td>
+                                <td class="column-2">{{ item_info.product.name|truncatewords:4 }}
+                                    </td>
+                                <td class="column-3">Rs. {{ item_info.product.price }}
+                                    <a href="/delete_product/{{item_info.id}}">
+                                        <span class="delete-icon"> Remove &#10006; </span>
+                                    </a>
+                                </td>
+
+                                </td>
+
+                                <!-- <td class="column-4">{{ item_info.0.quantity }}</td> -->
+
+                                </td>
+                                
+                                <h5><td class="column-4"><a href="/quick_view/{{item_info.product.id}}">view Product</a></td></h5>
+                            </tr>
+                            {% endfor %}
+
+                        </table>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Back to top -->
+<div class="btn-back-to-top" id="myBtn">
+    <span class="symbol-btn-back-to-top">
+        <i class="zmdi zmdi-chevron-up"></i>
+    </span>
+</div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}SignUp{% endblock %}
+
+{% block 'content' %}
+
+
+<form class="bg0 p-t-75 p-b-85" method="post">
+    {% csrf_token %}
+    <span>
+        {% if messages %}
+        <div class="alert alert-danger">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </span>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
+                <div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
+                    <h4 class="mtext-109 cl2 p-b-30">
+                        New customer
+                    </h4>
+
+                    <div class="bor8 bg0 m-b-22">
+                        <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="first_name" placeholder="First Name">
+                    </div>
+
+                    <div class="bor8 bg0 m-b-22">
+                        <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="last_name" placeholder="Last Name">
+                    </div>
+
+                    <div class="bor8 bg0 m-b-22">
+                        <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="username" placeholder="Email">
+                    </div>
+                    
+                    <div class="bor8 bg0 m-b-22">
+                        <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="password1" placeholder="Password">
+                    </div>
+
+                    <div class="bor8 bg0 m-b-22">
+                        <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="password2" placeholder="Confirm Password">
+                    </div>
+                    <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                        Create Account
+                    </button>
+                    &nbsp;
+                    <div>
+                        <a href="\login"><h6>Already have an Account? Login Here</h6></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    
+
+
+
+{% endblock %}

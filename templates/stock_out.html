@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Stock Out{% endblock %}
+
+{% block 'content' %}
+
+<br>
+<form class="bg0 p-t-75 p-b-85">
+    <div style="color: #FF0000; background-color: #FFEDED; border: 1px solid #FF0000; padding: 10px;">
+        {% if messages %}
+        <ul style="list-style-type: none; padding: 0;">
+            {% for message in messages %}
+            <li style="font-weight: bold;">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</form>
+
+<div class="header-cart-content flex-w js-pscroll">   
+    <div class="w-full">
+        <div class="header-cart-buttons flex-w w-full">
+            <a href="\" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+                Go Back
+            </a>
+        <div>
+    </div>
+</div>
+{% endblock %}
